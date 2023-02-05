@@ -9,7 +9,7 @@ COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-# Try to fix pip upgrade errors
+# Fix pip upgrade errors, see https://stackoverflow.com/questions/72270592/syntaxerror-when-pip-install-pip-def-readrel-path-str 
 RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py && \
     python get-pip.py && \
     pip install --upgrade setuptools
